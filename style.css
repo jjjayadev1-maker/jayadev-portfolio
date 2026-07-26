@@ -45,7 +45,7 @@ a { color: inherit; text-decoration: none; }
 .nav-logo {
   font-size: 1.25rem; font-weight: 800; letter-spacing: -0.5px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a {
@@ -101,7 +101,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-left h1 span {
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero-left h2 { font-size: 1.1rem; font-weight: 500; color: var(--muted); }
 .hero-tagline { color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
@@ -358,7 +358,7 @@ footer {
 }
 footer span {
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
 
