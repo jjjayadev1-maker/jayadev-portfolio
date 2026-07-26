@@ -362,126 +362,188 @@ footer span {
   font-weight: 700;
 }
 
-/* ══════════════════════════════════════════
-   RESPONSIVE — Mobile · Tablet · Laptop
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   FULLY RESPONSIVE — All Devices
+   320px · 480px · 600px · 768px · 900px · 1024px · 1280px+
+══════════════════════════════════════════════════════ */
 
-/* ── Tablet & small laptop (max 1024px) ── */
-@media (max-width: 1024px) {
-  .nav-inner { padding: 0 20px; }
-  .hero-inner { gap: 36px; }
-  .hero-photo-wrap { width: 280px; height: 320px; }
-  .hero-badge-float.b1 { left: -10px; }
-  .hero-badge-float.b2 { right: -10px; }
-  .about-grid { gap: 28px; }
-  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-  .achievements-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+/* ── Large desktop (1280px+) ── */
+@media (min-width: 1280px) {
+  .hero-inner { gap: 80px; }
+  .hero-photo-wrap { width: 380px; height: 420px; }
+  .container { max-width: 1200px; }
 }
 
-/* ── Tablet portrait (max 900px) ── */
+/* ── Laptop (max 1024px) ── */
+@media (max-width: 1024px) {
+  .nav-inner { padding: 0 24px; }
+  .hero-inner { gap: 40px; }
+  .hero-photo-wrap { width: 280px; height: 320px; }
+  .hero-badge-float.b1 { left: -8px; bottom: -10px; }
+  .hero-badge-float.b2 { right: -8px; top: -10px; }
+  .about-grid { gap: 32px; }
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+  .achievements-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+  section { padding: 80px 28px; }
+}
+
+/* ── Tablet landscape (max 900px) ── */
 @media (max-width: 900px) {
-  /* Hero: stack vertically, show photo above text */
-  #hero { padding: 90px 24px 60px; align-items: flex-start; }
+  #hero {
+    padding: 88px 24px 56px;
+    min-height: auto;
+    align-items: center;
+  }
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 32px;
   }
-  .hero-left { order: 2; align-items: center; }
+  .hero-left { order: 2; align-items: center; gap: 16px; }
   .hero-right { order: 1; display: flex; justify-content: center; }
-  .hero-chip { justify-content: center; }
-  .hero-stats { justify-content: center; gap: 32px; }
+  .hero-chip { margin: 0 auto; }
+  .hero-stats { justify-content: center; gap: 36px; }
   .hero-cta { justify-content: center; }
   .hero-photo-wrap { width: 200px; height: 240px; }
   .hero-badge-float { display: none; }
-
-  /* About */
-  .about-grid { grid-template-columns: 1fr; gap: 28px; }
-
-  /* Skills */
+  .hero-scroll { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Timeline */
+  .achievements-grid { grid-template-columns: repeat(2, 1fr); }
+  .edu-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .timeline { padding-left: 28px; }
   .job-header { flex-direction: column; gap: 6px; }
-
-  /* Achievements */
-  .achievements-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Education */
-  .edu-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Contact */
-  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  section { padding: 70px 24px; }
 }
 
-/* ── Mobile landscape & large phones (max 768px) ── */
+/* ── Tablet portrait (max 768px) ── */
 @media (max-width: 768px) {
   /* Nav */
   .nav-links { display: none; }
   .hamburger { display: block; }
   .nav-inner { padding: 0 16px; height: 56px; }
-  .nav-logo { font-size: 1.1rem; }
-  .mobile-menu { padding: 14px 16px; }
+  .nav-logo { font-size: 1.05rem; }
+  .mobile-menu { padding: 12px 16px; gap: 12px; }
+  .mobile-menu a { font-size: 0.9rem; }
 
   /* Sections */
-  section { padding: 64px 16px; }
-  .section-sub { margin-bottom: 32px; }
+  section { padding: 60px 16px; }
+  .section-title { font-size: 1.6rem; }
+  .section-sub { font-size: 0.88rem; margin-bottom: 28px; }
 
   /* Hero */
-  #hero { padding: 80px 16px 50px; }
-  .hero-left h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); }
-  .hero-left h2 { font-size: 1rem; }
-  .hero-tagline { font-size: 0.85rem; }
-  .hero-stats { gap: 20px; }
+  #hero { padding: 76px 16px 48px; }
+  .hero-inner { gap: 28px; }
+  .hero-left h1 { font-size: clamp(1.8rem, 6.5vw, 2.4rem); letter-spacing: -0.5px; }
+  .hero-left h2 { font-size: 0.95rem; }
+  .hero-tagline { font-size: 0.83rem; line-height: 1.7; }
+  .hero-chip { font-size: 0.75rem; padding: 5px 12px; }
+  .hero-stats { gap: 24px; }
   .stat-num { font-size: 1.4rem; }
-  .hero-cta { flex-direction: column; align-items: center; gap: 10px; }
-  .btn-primary, .btn-outline, .btn-download { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
-  .hero-right { display: flex; justify-content: center; margin-bottom: 8px; }
-  .hero-photo-wrap { width: 160px; height: 190px; }
+  .stat-label { font-size: 0.7rem; }
+  .hero-cta { flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+  .btn-primary, .btn-outline, .btn-download {
+    width: 100%; max-width: 300px;
+    text-align: center; justify-content: center;
+    padding: 12px 20px; font-size: 0.875rem;
+  }
+  .hero-right { display: flex; justify-content: center; }
+  .hero-photo-wrap { width: 170px; height: 200px; }
+  .hero-photo { border-radius: 20px; border-width: 3px; }
+  .hero-photo-bg, .hero-photo-bg2 { border-radius: 20px; }
 
-  /* Skills: 1 column */
-  .skills-grid { grid-template-columns: 1fr; }
-  .skill-card { padding: 20px; }
+  /* About */
+  .about-text p { font-size: 0.88rem; }
+  .info-card { padding: 16px; }
+  .info-item { font-size: 0.83rem; padding: 10px 0; gap: 10px; }
+  .info-icon { width: 32px; height: 32px; border-radius: 8px; }
+
+  /* Skills */
+  .skills-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .skill-card { padding: 18px; }
+  .skill-icon { width: 40px; height: 40px; font-size: 1.2rem; margin-bottom: 12px; }
+  .skill-card h3 { font-size: 0.88rem; margin-bottom: 10px; }
+  .tags span { font-size: 0.72rem; padding: 3px 9px; }
 
   /* Timeline */
   .timeline { padding-left: 20px; }
-  .timeline-dot { left: -24px; }
-  .timeline-card { padding: 20px; }
-  .project-block { padding: 14px; }
-  .env-tags { gap: 6px; }
+  .timeline::before { left: 8px; }
+  .timeline-dot { left: -22px; top: 20px; width: 14px; height: 14px; }
+  .timeline-card { padding: 18px; }
+  .job-header h3 { font-size: 1rem; }
+  .job-header h4 { font-size: 0.88rem; }
+  .env-tags { gap: 6px; margin-bottom: 16px; }
+  .env-tags span { font-size: 0.72rem; padding: 3px 9px; }
+  .project-block { padding: 12px 14px; margin-bottom: 12px; }
+  .project-block h5 { font-size: 0.86rem; margin-bottom: 8px; }
+  .project-block li { font-size: 0.82rem; }
 
-  /* Achievements: 1 column */
-  .achievements-grid { grid-template-columns: 1fr; }
+  /* Achievements */
+  .achievements-grid { grid-template-columns: 1fr; gap: 12px; }
+  .achievement-card { padding: 18px; gap: 14px; }
+  .ach-icon { width: 40px; height: 40px; border-radius: 10px; }
+  .achievement-card h4 { font-size: 0.88rem; }
+  .achievement-card p { font-size: 0.83rem; }
 
-  /* Education: 1 column */
-  .edu-grid { grid-template-columns: 1fr; }
+  /* Education */
+  .edu-grid { grid-template-columns: 1fr; gap: 12px; }
+  .edu-card { padding: 18px; gap: 14px; }
+  .edu-icon { width: 42px; height: 42px; font-size: 1.1rem; }
+  .edu-card h3 { font-size: 0.9rem; }
+  .edu-card p { font-size: 0.82rem; }
 
-  /* Contact: 1 column */
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-card { padding: 24px; }
-
-  /* Info card */
-  .info-card { padding: 18px; }
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .contact-card { padding: 22px 16px; }
+  .contact-icon { width: 46px; height: 46px; border-radius: 12px; margin-bottom: 12px; }
+  .contact-icon i { font-size: 1.1rem; }
+  .contact-card h3 { font-size: 0.88rem; }
+  .contact-card p { font-size: 0.8rem; }
 
   /* Footer */
   footer { padding: 20px 16px; font-size: 0.8rem; }
 }
 
-/* ── Small mobile (max 480px) ── */
+/* ── Large phones (max 600px) ── */
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-photo-wrap { width: 155px; height: 185px; }
+}
+
+/* ── Small phones (max 480px) ── */
 @media (max-width: 480px) {
-  .hero-left h1 { font-size: clamp(1.7rem, 8vw, 2.2rem); }
-  .hero-right { display: flex; justify-content: center; }
-  .hero-photo-wrap { width: 140px; height: 165px; }
-  .section-title { font-size: 1.5rem; }
-  .timeline-card { padding: 16px; }
-  .achievement-card { padding: 18px; gap: 12px; }
-  .ach-icon { width: 38px; height: 38px; }
-  .edu-card { padding: 18px; }
-  .contact-card { padding: 20px; }
-  .contact-icon { width: 48px; height: 48px; }
-  .hero-stats { gap: 16px; }
-  .stat-num { font-size: 1.3rem; }
+  section { padding: 52px 14px; }
+  .hero-left h1 { font-size: clamp(1.6rem, 8vw, 2rem); }
+  .hero-left h2 { font-size: 0.88rem; }
+  .hero-tagline { font-size: 0.8rem; }
+  .hero-stats { gap: 18px; }
+  .stat-num { font-size: 1.25rem; }
+  .hero-photo-wrap { width: 140px; height: 168px; }
+  .hero-photo { border-radius: 18px; }
+  .section-title { font-size: 1.4rem; }
+  .section-sub { font-size: 0.83rem; }
+  .timeline-card { padding: 14px; }
+  .project-block { padding: 10px 12px; }
+  .achievement-card { padding: 14px; gap: 12px; }
+  .ach-icon { width: 36px; height: 36px; }
+  .edu-card { padding: 14px; }
+  .contact-card { padding: 18px 14px; }
+  .btn-primary, .btn-outline, .btn-download { max-width: 100%; }
+  .nav-logo { font-size: 1rem; }
+}
+
+/* ── Very small phones (max 360px) ── */
+@media (max-width: 360px) {
+  section { padding: 48px 12px; }
+  .hero-left h1 { font-size: 1.5rem; }
+  .hero-photo-wrap { width: 120px; height: 145px; }
+  .hero-stats { gap: 14px; }
+  .stat-num { font-size: 1.1rem; }
+  .stat-label { font-size: 0.65rem; }
+  .skill-card { padding: 14px; }
+  .tags span { font-size: 0.68rem; padding: 2px 7px; }
 }
 
 /* ══════════════════════════════════════════
@@ -632,22 +694,30 @@ footer span {
 }
 .chat-send:hover { transform: scale(1.08); box-shadow: 0 4px 14px rgba(109,40,217,0.35); }
 
-/* Mobile */
+/* Chat — All devices */
+@media (max-width: 1024px) {
+  .chat-box { width: 340px; }
+}
 @media (max-width: 768px) {
   .chat-box {
-    width: calc(100vw - 24px);
-    right: 12px;
-    bottom: 86px;
-    max-height: 70vh;
+    width: calc(100vw - 20px);
+    right: 10px; bottom: 82px;
+    max-height: 72vh;
+    border-radius: 16px;
   }
-  .chat-toggle {
-    right: 16px;
-    bottom: 16px;
-    padding: 12px 16px;
-  }
+  .chat-toggle { right: 14px; bottom: 14px; padding: 11px 15px; border-radius: 40px; }
   .chat-toggle-label { display: none; }
-  .chat-body { padding: 12px; }
-  .chat-bubble { font-size: 0.83rem; padding: 10px 13px; }
-  .suggest-btn { font-size: 0.72rem; padding: 4px 10px; }
-  .chat-input { font-size: 0.83rem; padding: 8px 12px; }
+  .chat-toggle-icon { font-size: 1.2rem; }
+  .chat-body { padding: 12px; gap: 10px; }
+  .chat-bubble { font-size: 0.82rem; padding: 9px 12px; max-width: 92%; }
+  .suggest-btn { font-size: 0.71rem; padding: 4px 9px; }
+  .chat-input { font-size: 0.82rem; padding: 8px 11px; }
+  .chat-send { width: 34px; height: 34px; font-size: 0.9rem; }
+  .chat-header { padding: 13px 14px; }
+  .chat-header-name { font-size: 0.88rem; }
+}
+@media (max-width: 480px) {
+  .chat-box { width: calc(100vw - 16px); right: 8px; bottom: 76px; max-height: 75vh; }
+  .chat-toggle { right: 12px; bottom: 12px; width: 48px; height: 48px; padding: 0; border-radius: 50%; justify-content: center; }
+  .chat-toggle-icon { font-size: 1.3rem; }
 }
